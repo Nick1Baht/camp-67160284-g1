@@ -11,7 +11,9 @@
     <style>
         body {font-family: "Itim", cursive;}
         body {
-                background-image: url("{{ asset('img/yim2.png') }}");
+                background-color: #fac8f1;
+                /*background-image: url("{{ asset('img/yim2.png') }}");*/
+                /*background-image: url("https://tenor.com/view/dog-smirk-dark-side-evil-dog-dog-smile-gif-15161312519845411874");*/
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-attachment: fixed;
@@ -32,6 +34,7 @@
 </head>
     <body>
         <div class = "content-box">
+            <header class ="fs-1 text-center">@yield('header')</header>
             @yield('content')
         </div>
         @stack('scripts')

@@ -1,14 +1,16 @@
 @extends('template.default')
+
 @section('title', 'Form')
 @section('content')
     <h1 class ="fs-1 text-center">Workshop #HTML - FORM</h1>
-    <form>
+    <form method="post" action="/form" >
+        @csrf
         <div class="row mb-3">
             <div class="col-3">
                 <label for="fname" class="form-label">ชื่อ</label>
             </div>
             <div class="col-6">
-                <input type="text" id="fname" class="form-control form-control-sm">
+                <input type="text" id="fname" name="fname" class="form-control form-control-sm">
                 <div class="valid-feedback">
                     ถูกต้อง
                 </div>
@@ -23,7 +25,7 @@
                 <label for="lname" class="form-label">สกุล</label>
             </div>
             <div class="col-6">
-                <input type="text" id="lname" class="form-control form-control-sm">
+                <input type="text" id="lname" name="lname" class="form-control form-control-sm">
                 <div class="valid-feedback">
                     ถูกต้อง
                 </div>
@@ -38,7 +40,7 @@
                 <label for="Birth" class="form-label">วัน/เดือน/ปีเกิด</label>
             </div>
             <div class="col-4">
-                <input type="date" id="Birth" class="form-control form-control-sm">
+                <input type="date" id="Birth" name="Birth" class="form-control form-control-sm">
                 <div class="valid-feedback">
                     ถูกต้อง
                 </div>
@@ -53,7 +55,7 @@
                 <label for="Ages" class="form-label">อายุ</label>
             </div>
             <div class="col-4">
-                <input type="number" id="Ages" class="form-control form-control-sm" min="0">
+                <input type="number" id="Ages" name="Ages" class="form-control form-control-sm" min="0">
                 <div class="valid-feedback">ถูกต้อง</div>
                 <div class="invalid-feedback">โปรดระบุอายุ</div>
             </div>
@@ -78,7 +80,7 @@
                     <label for="Images" class="form-label">รูป</label>
                 </div>
                 <div class="col-4">
-                    <input type="file" id="Images" class="form-control form-control-sm" multiple>
+                    <input type="file" id="Images" name="Images" class="form-control form-control-sm" multiple>
                     <div class="valid-feedback">ถูกต้อง</div>
                     <div class="invalid-feedback">โปรดอัปโหลดรูปภาพ</div>
                 </div>
@@ -89,7 +91,7 @@
                     <label for="Address" class="form-label">ที่อยู่</label>
                 </div>
                 <div class="col-6">
-                    <textarea class="form-control" id="Address" rows="4"></textarea>
+                    <textarea class="form-control" id="Address" name="Address" rows="4"></textarea>
                     <div class="valid-feedback">ถูกต้อง</div>
                     <div class="invalid-feedback">โปรดระบุที่อยู่</div>
                 </div>
@@ -100,7 +102,7 @@
                     <label for="FavColor" class="form-label">สีที่ชอบ</label>
                 </div>
                 <div class="col-4">
-                    <select class="form-select" aria-label="เลือกสี" id="FavColor">
+                    <select class="form-select" aria-label="เลือกสี" id="FavColor" name="FavColor">
                         <option selected>-</option>
                         <option value="red">แดง</option>
                         <option value="blue">น้ำเงิน</option>
@@ -151,7 +153,7 @@
             <div class="row mb-3">
                 <div class="col-4">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="PDPA" id="AcceptPDPA">
+                        <input class="form-check-input" type="checkbox" value="PDPA" id="AcceptPDPA" name="AcceptPDPA">
                         <label class="form-check-label" for="AcceptPDPA">
                             ยินยอมให้เก็บข้อมูล
                         </label>
@@ -163,7 +165,7 @@
 
             <div class="row mb-3">
                 <div class="col-end">
-                    <button type="button" class="btn btn-success float-end" onclick="clickMe()">Submit</button>
+                    <button type="submit" class="btn btn-success float-end" onclick="clickMe()">Submit</button>
                     <button type="reset" class="btn btn-secondary float-end me-4">Reset</button>
                 </div>
             </div>
