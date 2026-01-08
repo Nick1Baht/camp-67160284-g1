@@ -18,25 +18,13 @@
                 background-repeat: no-repeat;
                 background-attachment: fixed;
             }
-    .content-box {
-    width: 40%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f3a7e5;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 75%;
-    align-items: center;
-    }
 
     </style>
     @stack('styles')
 </head>
     <body>
-        <div class = "content-box">
             <header class ="fs-1 text-center">@yield('header')</header>
             @yield('content')
-        </div>
         @stack('scripts')
     </body>
 </html>
